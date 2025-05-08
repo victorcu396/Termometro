@@ -4,7 +4,7 @@ body {
     text-align: center;
     margin: 20px;
 }
-.progress-container {
+.Contenedor-termometro {
     width: 100%;
     max-width: 300px;
     margin: 20px auto;
@@ -13,12 +13,12 @@ body {
     overflow: hidden;
     border: 1px solid #ccc;
 }
-.progress-bar {
+.barra-termometro {
     height: 30px;
     width: 0%;
     transition: width 0.3s ease;
 }
-.temperature {
+.temperatura {
     font-size: 1.5em;
     margin-top: 10px;
 }
