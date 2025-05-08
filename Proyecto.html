@@ -5,38 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Termómetro Visual</title>
         <link rel="stylesheet" href="/estilos.css">
-        
     </head>
-
 <body>
 <h1>Termómetro Visual</h1>
-<p>Este es un termómetro visual que muestra la temperatura en grados Celsius y Fahrenheit.</p>
+<p>Este es un termómetro visual que muestra la temperatura en grados Celsius</p>
 <input type="number" id="temperaturas" placeholder="Ingrese la temperatura en °C">
     <div class="Contenedor-termometro">
         <div id="BarraProgreso" class="barra-termometro"></div>
     </div>
     <div id="MostrarTemperatura" class="temperatura"></div>
-
     <script>
         // Obtener el elemento de la barra de progreso y el campo de entrada de temperatura
         const temperaturas = document.getElementById('temperaturas');
         const barraProgreso = document.getElementById('BarraProgreso');
         const mostrarTemperatura = document.getElementById('MostrarTemperatura');
-
         temperaturas.addEventListener('input', function() {
             // Obtener el valor de la temperatura ingresada
             const temperatura = parseFloat(temperaturas.value);
             if (isNaN(temperatura)) {
-                mostrarTemperatura.textContent = 'Ingrese una temperatura válida.';
-                barraProgreso.style.height = '0%';
-                barraProgreso.style.backgroundColor = '';
                 mostrarTemperatura.textContent = '';
+                barraProgreso.style.width = '0%';
+                barraProgreso.style.backgroundColor = 'transparent';
                 return;
             }
             // Actualizar el progreso de la barra
             const porcentaje = Math.min(Math.max((temperatura / 50) * 100, 0), 100);
             barraProgreso.style.width = `${porcentaje}%`;
-
             // Actualizar el color de la barra según la temperatura
             if (temperatura <10){
                 barraProgreso.style.backgroundColor = 'blue'; // Frío
@@ -51,15 +45,9 @@
             } else {
                 barraProgreso.style.backgroundColor = 'purple'; // Peligroso
             }
-
             // Mostrar la temperatura en Celsius
             mostrarTemperatura.textContent = `Temperatura: ${temperatura.toFixed(1)} °C`;
-
-
         });
-
     </script>
-
 </body>
-
 </html>

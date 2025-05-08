@@ -6,7 +6,7 @@ body {
 }
 .Contenedor-termometro {
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     margin: 20px auto;
     background-color: #f3f3f3;
     border-radius: 10px;
@@ -26,4 +26,5 @@ input {
     padding: 10px;
     font-size: 1em;
     margin-top: 10px;
+    width: 28%;
 }
